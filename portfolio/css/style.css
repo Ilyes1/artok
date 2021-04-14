@@ -1,0 +1,619 @@
+/*=============================
+
+Table of content
+
+1. The navbar
+2. Navbar responsive edits
+3. The home
+4. About section
+5. Services section
+6. Portfolio section
+7. Portfolio responsive edits
+8. Hire me section
+9. Contact section
+10. Contact responsive edits
+11. Footer section
+12. Footer responsive edits
+
+==============================*/
+
+
+
+/* Fonts  */
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@200&display=swap');
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+    background: #1a1a1d;
+}
+
+/* The scrollbar  */
+::-webkit-scrollbar {
+    width: 9px;
+    height: 9px
+}
+
+::-webkit-scrollbar-thumb {
+    background: #a1defbe1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #a1dffb
+}
+
+::-webkit-scrollbar-track {
+    background: #000
+}
+/* The scrollbar end */
+
+/* The navbar */
+header {
+    position: fixed;
+    top: 0px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0px;
+    transition: .5s;
+    z-index: 3;
+}
+
+header ul {
+    display: flex;
+    list-style: none;
+    margin: 0px 20px;
+}
+
+header a {
+    color: white;
+    text-decoration: none;
+    margin: 0px 20px;
+    transition: .5s;
+}
+
+header a:hover {
+    color: #a1dffb;
+}
+
+.menuIcon {
+    cursor: pointer;
+}
+
+.menuIcon::before, .menuIcon::after {
+    content: '';
+    width: 25px;
+    height: 2px;
+    background: #fff;
+    margin: 7px 0px;
+    display: block;
+    transition: .5s;
+}
+
+.menuIcon-active::before {
+    transform: rotateZ(-45deg) translateY(6px);
+}
+.menuIcon-active::after {
+    transform: rotateZ(45deg) translateY(-6px);
+}
+
+header img {
+    height: 40px;
+    margin: 0px 20px;
+}
+/* The navbar end */
+
+/* The responsive navbar  */
+.resNav {
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+    position: fixed;
+    display: none;
+    z-index: 3;
+}
+
+.resNav a {
+    color: #fff;
+    text-decoration: none;
+}
+
+.resNav li {
+    margin: 20px 0px;
+}
+/* The responsive navbar end */
+
+
+/* Navbar responsive edits  */
+@media (max-width: 768px) {
+    header img {
+        margin: 0px;
+    }
+
+    .menuIcon {
+        display: block;
+    }
+
+    .navlinks li:not(.menuIcon) {
+        display: none;
+    }
+
+}
+
+@media (min-width: 769px) {
+    .menuIcon {
+        display: none;
+    }
+
+    .resNav {
+        display: none;
+    }
+}
+/* Navbar responsive edits  */
+
+/* The home  */
+.home {
+    width: 100%;
+    height: 100vh;
+    background-image: url('../images/homeBackground.jpg');
+    background-size: cover;
+    background-position: center 0;
+    background-repeat: no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    color: #fff;
+}
+
+.home h1 {
+    font-size: 3.2rem;
+    color: #e8a628;
+}
+
+#scrollButton {
+    position: absolute;
+    bottom: 50px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    text-decoration: none;
+}
+
+#scrollButton h2 {
+    font-weight: 400;
+    color: #fff;
+}
+
+#scrollButton img {
+    height: 20px;
+    filter: invert(100%);
+    animation: down 1.5s infinite linear;
+}
+
+@keyframes down {
+    from {
+        opacity: 1;
+        transform: translateY(0px);
+    }
+    to {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
+/* The home end */
+
+.socialMedia {
+    list-style: none;
+    position: absolute;
+    bottom: 10px;
+    left: 20px;
+}
+
+.socialMedia li {
+    margin: 15px 0px;
+    color: lightgray;
+    font-size: .9rem;
+}
+
+/* About section  */
+.about {
+    width: 100%;
+    display: flex;
+}
+
+.about-left, .about-right {
+    width: 50%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.about-left img {
+    width: 60%;
+    max-height: 80%;
+    object-fit: cover;
+}
+
+.about-right {
+    background: #eee;
+    align-items: flex-start;
+    font-weight: 600;
+    padding: 0px 30px;
+}
+
+.skill {
+    width: 70%;
+    height: 15px;
+    margin: 10px 0px;
+}
+
+.skill-progressBar {
+    height: 100%;
+    width: 0%;
+    background-image: linear-gradient(to right, #a1dffb, #000);
+    font-size: .8rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0px 3px;
+    transition: 1s;
+}
+
+.skill-progressBar span {
+    color: #fff;
+    font-weight: 400;
+}
+/* About section end */
+
+/* About section responsive edits */
+@media (max-width: 768px) {
+    .about {
+        flex-direction: column;
+    }
+
+    .about-left, .about-right {
+        width: 100%;
+        height: fit-content;
+        padding: 20px;
+    }
+
+    .about-left img {
+        width: 90%;
+        height: auto;
+    }
+
+    .skill {
+        width: 90%;
+    }
+}
+/* About section responsive edits end */
+
+/* Services Section  */
+.services {
+    width: 100%;
+    padding: 20px 0px;
+    background-image: url('../images/servicesBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.services h1 {
+    text-align: center;
+    color: #fff;
+    margin-top: 10px;
+}
+
+.services-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 20px;
+    padding: 20px 0px;
+}
+
+.service {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 300px;
+    height: 300px;
+    background-color: rgba(255, 255, 255, 0.596);
+    margin: 10px auto;
+}
+
+.service img {
+    height: 60px;
+}
+/* Services Section end */
+
+/* Portfolio section  */
+.portfolio {
+    width: 100%;
+    margin-top: 30px;
+}
+
+.port-title {
+    width: 100%;
+    text-align: center;
+    color: #fff;
+    margin: 20px 0px;
+}
+
+.projects {
+    width: 80%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: auto;
+}
+
+.project {
+    width: 350px;
+    height: 350px;
+    margin: 20px;
+    position: relative;
+    cursor: pointer;
+}
+
+.project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.projects h1 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+    color: #fff;
+    opacity: 0;
+    transition: .5s;
+}
+
+.project:hover > img {
+    filter: brightness(.5);
+}
+
+.project:hover > h1 {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+}
+
+.project:empty {
+    height: 0px;
+}
+
+.popup {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    display: none;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.753);
+}
+
+.popup img {
+    position: absolute;
+    max-width: 60%;
+    max-height: 90%;
+    object-fit: cover;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+/* Portfolio section end */
+
+/* Portfolio responsive edits */
+@media (max-width: 974px) {
+    .projects {
+        width: 100%;
+    }
+}
+
+@media (max-width: 779px) {
+    .project {
+        width: 250px;
+        height: 250px;
+    }
+
+    .popup img {
+        max-width: 90%;
+        max-height: 90%;
+    }
+}
+
+@media (max-width: 579px) {
+    .project {
+        width: 90%;
+        height: fit-content;
+    }
+}
+/* Portfolio responsive edits end */
+
+/* Hire me section  */
+.hire {
+    width: 100%;
+    height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-image: url('../images/hireMeBackground.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.hire h1 {
+    color: #fff;
+
+}
+
+.hire a {
+    color: #fff;
+    text-decoration: none;
+    border: 2px solid #fff;
+    backdrop-filter: blur(3px) brightness(.6);
+    padding: 15px 30px;
+    font-weight: 400;
+    transition: .5s;
+}
+
+.hire a:hover {
+    border: 2px solid #a1dffb;
+}
+/* Hire me section end */
+
+/* Contact section  */
+.contact {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 40%;
+    height: fit-content;
+    padding: 5px 10px;
+    margin: auto;
+}
+
+.form h1 {
+    color: #fff;
+}
+
+.form input, .form textarea, .form button {
+    width: 100%;
+    padding: 10px;
+    font-weight: 600;
+    color: #fff;
+    margin: 5px 0px;
+    outline: none;
+    background: none;
+    border: 1px solid #fff;
+    border-radius: 0px;
+}
+
+.form button {
+    background: #fff;
+    color: #000;
+    cursor: pointer;
+}
+
+.form textarea {
+    height: 150px;
+    resize: vertical;
+}
+
+.form h4 {
+    width: 100%;
+    background-color: #e8a628;
+    color: #000;
+    padding: 5px;
+    display: none;
+}
+
+.map {
+    width: 40%;
+    height: 400px;
+    margin: auto;
+}
+
+iframe {
+    width: 100%;
+    height: 100%;
+}
+/* Contact section end  */
+
+/* Contact responsive edits  */
+@media (max-width: 800px) {
+    .contact {
+        flex-direction: column;
+    }
+
+    .map, .form {
+        width: 80%;
+        margin: 30px 0px;
+    }
+
+    .form {
+        margin-top: 100px;
+        padding: 0;
+    }
+}
+/* Contact responsive edits end */
+
+/* Footer section  */
+footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background: #111113;
+    padding: 0px 20px;
+}
+
+footer img {
+    height: 40px;
+    margin: 20px;
+}
+
+footer ul {
+    display: flex;
+    list-style-type: none;
+    margin: 20px;
+}
+
+footer a {
+    color: #fff;
+    margin: 0px 15px;
+    transition: .5s;
+}
+
+footer a:hover {
+    color: #a1dffb;
+}
+/* Footer section end */
+
+/* Footer responsive edits */
+@media (max-width: 500px) {
+    footer {
+        flex-direction: column;
+    }
+}
+/* Footer responsive edits end */

@@ -1,0 +1,17 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Josefin Sans', sans-serif;
+}
+
+body {
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+h1 {
+    width: 100%;
+    text-align: center;
+    margin-top: 100px;
+}
